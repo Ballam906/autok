@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="2. feladat:" HorizontalAlignment="Left" Margin="47,46,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ketto" Content="" HorizontalAlignment="Left" Margin="148,46,0,0" VerticalAlignment="Top" Width="516"/>
+
     </Grid>
 </Window>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,6 +26,42 @@ namespace autok
         public MainWindow()
         {
             InitializeComponent();
+
+            beolvas();
+
+
+
+
+            //var max = lista.Max(item => item.R, );
+            var max1 = lista[0].ora;
+            var max2 = lista[0].perc;
+            var rendszam = lista[0].rendszam;
+            foreach (var item in lista)
+            {
+                if (item.ora > max1)
+                {
+                    max1 = item.ora;
+                }
+
+            }
+
+            foreach (var item in lista)
+            {
+                if (max1 == item.ora)
+                {
+                    if(item.perc > max2)
+                    {
+                        max2 = item.perc;
+                        rendszam = item.rendszam;
+                    }
+                }
+
+            }
+
+            ketto.Content = $"Utolsó jeladás részletei: rendszám: {rendszam}, óra: {max1}, perc: {max2}";
+
+
+
         }
 
         private void beolvas()
@@ -39,5 +76,7 @@ namespace autok
                 }
             }
         }
+
+
     }
 }
