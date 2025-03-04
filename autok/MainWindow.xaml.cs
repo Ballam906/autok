@@ -60,6 +60,19 @@ namespace autok
 
             ketto.Content = $"Utolsó jeladás részletei: rendszám: {rendszam}, óra: {max1}, perc: {max2}";
 
+            //3. feladat:
+            var elso = lista[0].rendszam;
+            var szoveg = "";
+            foreach (var item in lista) {
+                if (elso == item.rendszam) { 
+                    var oraja = item.ora;
+                    var perce = item.perc;
+
+                    szoveg = szoveg + " " + oraja + ":" + perce+" ";
+                }
+            }
+
+            harom.Content = $"Az első jármű: {elso} :" +szoveg;
 
 
         }
