@@ -23,13 +23,21 @@ namespace autok
     public partial class MainWindow : Window
     {
         List<auto> lista = new List<auto>();
+        List<string> rendszamok = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
 
             beolvas();
 
+            rendszamokbe();
 
+            kiir();
+
+            foreach (var item in rendszamok)
+            {
+                Console.WriteLine(item);
+            }
             //var max = lista.Max(item => item.R, );
             var max1 = lista[0].ora;
             var max2 = lista[0].perc;
@@ -73,6 +81,78 @@ namespace autok
             harom.Content = $"Az első jármű: {elso} :" +szoveg;
 
 
+        }
+
+        private void rendszamokbe()
+        {
+            var van = false;
+            foreach (var item in lista)
+            {
+                van = false;
+                foreach(var item2 in rendszamok)
+                {
+                    if(item.rendszam == item2)
+                    {
+                        van = true;
+                        break;
+                    }
+                    else
+                    {
+                        van = false;
+                    }
+                }
+
+                if (van == false)
+                {
+                    rendszamok.Add(item.rendszam);
+                }
+            }
+        }
+
+        private void kiir()
+        {
+            using (var sw = new StreamWriter("ido.txt"))
+            {
+                foreach (var item in rendszamok)
+                {
+                    var max1 = lista[0].ora;
+                    var max2 = lista[0].perc;
+                    var min1 = 1000;
+                    var min2 = 1000;
+                    foreach (var item2 in lista)
+                    {
+                        if(item == item2.rendszam)
+                        {
+                            if (item2.ora > max1)
+                            {
+                                max1 = item2.ora;
+                            }
+                            if(item2.ora < min1)
+                            {
+                                min1 = item2.ora;
+                            }
+                        }
+                    }
+
+                    foreach (var item3 in lista)
+                    {
+                        if (item == item3.rendszam) {
+                            if (max1 == item3.ora)
+                            {
+                                if (item3.perc > max2)
+                                {
+                                    max2 = item3.perc;
+                                }
+                            }
+                            if (item3.perc < min2)
+                            {
+                                min2 = item3.perc;
+                            }
+                        }
+                    }
+                    sw.WriteLine($"Az autó rendszáma: {item}, első jeladás: {min1}:{min2}, utolsó jeladás: {max1}:{max2}");
+                }
+            }
         }
 
         private void beolvas()
