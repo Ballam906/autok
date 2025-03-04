@@ -30,8 +30,6 @@ namespace autok
             beolvas();
 
 
-
-
             //var max = lista.Max(item => item.R, );
             var max1 = lista[0].ora;
             var max2 = lista[0].perc;
@@ -90,6 +88,22 @@ namespace autok
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var ora2 = int.Parse(ora.Text);
+            var perc2 = int.Parse(perc.Text);
 
+            var jeladas = 0;
+
+            foreach (var item in lista)
+            {
+                if(item.ora <= ora2 && item.perc <= perc2)
+                {
+                    jeladas++;
+                }
+            }
+
+            negy.Content = $"Jeladások száma: {jeladas}";
+        }
     }
 }

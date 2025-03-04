@@ -10,7 +10,14 @@
         <Label Content="2. feladat:" HorizontalAlignment="Left" Margin="47,46,0,0" VerticalAlignment="Top"/>
         <Label x:Name="ketto" Content="" HorizontalAlignment="Left" Margin="148,46,0,0" VerticalAlignment="Top" Width="516"/>
         <Label Content="3. feladat:" HorizontalAlignment="Left" Margin="47,118,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="harom" Content="Label" HorizontalAlignment="Left" Margin="169,118,0,0" VerticalAlignment="Top" Width="547"/>
+        <Label x:Name="harom" Content="" HorizontalAlignment="Left" Margin="169,118,0,0" VerticalAlignment="Top" Width="547"/>
+        <Label Content="4. feladat" HorizontalAlignment="Left" Margin="47,182,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ora"  HorizontalAlignment="Left" Margin="201,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="58"/>
+        <TextBox x:Name="perc"  HorizontalAlignment="Left" Margin="328,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="58"/>
+        <Label Content="ora:" HorizontalAlignment="Left" Margin="166,186,0,0" VerticalAlignment="Top"/>
+        <Label  Content="perc:" HorizontalAlignment="Left" Margin="287,186,0,0" VerticalAlignment="Top"/>
+        <Button Content="mehet" HorizontalAlignment="Left" Margin="423,188,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label x:Name="negy" Content="" HorizontalAlignment="Left" Margin="524,182,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
